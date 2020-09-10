@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(rmdir holberton /tmp)
+rmdir holberton /tmp
