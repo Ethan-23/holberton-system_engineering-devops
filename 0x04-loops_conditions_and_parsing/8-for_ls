@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#list ls with no -
+
 for i in *
 do
     echo "$i" | cut -f2 -d'-'
