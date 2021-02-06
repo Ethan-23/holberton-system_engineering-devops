@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#While loop
+
+x=1
+while [ $x -lt 11 ]
+do
+	if [ $x -eq 9 ]
+	then
+	echo "Hi"
+	else
+    	echo "Holberton School"
+	fi
+    x=$((x + 1))
+done
