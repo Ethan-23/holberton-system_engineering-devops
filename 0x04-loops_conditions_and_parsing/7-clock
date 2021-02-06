@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#While loop
+
+j=0
+while [ $j -lt 13 ]
+do
+	echo Hour: $j
+	x=1
+	j=$((j + 1))
+while [ $x -lt 60 ]
+do
+	echo $x
+    x=$((x + 1))
+done
+done
