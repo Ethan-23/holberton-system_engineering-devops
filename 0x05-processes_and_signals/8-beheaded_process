@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #comment yes!
 
-pkill -SIGKILL "$(pgrep 4-to_infinity_and_beyond)"
+pkill -SIGKILL -f 7-highlander
