@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #comment yes!
 
-pkill -f -SIGKILL "$(pgrep -f 4-to_infinity_and_beyond)"
+pkill -SIGKILL "$(pgrep 4-to_infinity_and_beyond)"
