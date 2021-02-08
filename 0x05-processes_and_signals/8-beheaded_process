@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #comment yes!
 
-pkill "$(-SIGKILL pgrep -f 7-highlander)"
+pkill -SIGKILL "$(pgrep -f 7-highlander)"
