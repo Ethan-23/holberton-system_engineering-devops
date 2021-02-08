@@ -2,7 +2,7 @@
 #comments woow
 
 echo $$ > /var/run/holbertonscript.pid
-trap "echo I am invincible!!!" SIGTERM
+trap "I hate the kill command" SIGTERM
 trap "Y U no love me?!" SIGINT
 trap (rm /var/run/holbertonscript.pid) SIGQUIT
 while true
