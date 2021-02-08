@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#comment yes!
+
+kill %1
