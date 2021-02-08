@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #comment yes!
 
-kill %1
+pkill "$(-SIGKILL pgrep -f 4-to_infinity_and_beyond)"
