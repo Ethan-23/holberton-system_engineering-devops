@@ -9,6 +9,6 @@ file_path="/etc/nginx/sites-available/default"
 string_add="rewrite ^/redirect_me $site_redirect permanent;"
 sudo sed -i "/listen \[::\]:80 default_server/a $string_add" $file_path
 error_add="error_page 404 /404.html"
-echo "Ceci n'est pas une page" > sudo /var/www/html/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo sed -i "/listen \[::\]:80 default_server/a $error_add" $file_path
 sudo service nginx restart
