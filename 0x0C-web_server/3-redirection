@@ -5,7 +5,6 @@ apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo "Holberton School" > /var/www/html/index.html
 site_redirect="https://www.youtube.com/watch?v=QH2-TGUlwu4"
-file_path="/etc/nginx/sites-available/default"
-append_string="rewrite ^/redirect_me $site_redirect permanent;"
-sed -i "/listen \[::\]:80 default_server/a $append_string" $file_path
+append_rewrite="rewrite ^/redirect_me $site_redirect permanent;"
+sed -i "/listen \[::\]:80 default_server/a $append_rewrite" $file_path
 service nginx restart
