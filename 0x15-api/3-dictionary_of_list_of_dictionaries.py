@@ -21,7 +21,7 @@ if __name__ == "__main__":
             new_dict[id].append({"task": task["title"],
                                  "completed": task["completed"],
                                  "username": name})
-    filen = id + ".json"
+    filen = 'todo_all_employees.json'
     with open(filen, "w+") as f:
         json_string = json.dumps(new_dict)
         f.write(json_string)
