@@ -13,5 +13,8 @@ def number_of_subscribers(subreddit):
     )
     subs = requests.get(url + "r/" + subreddit + "/about.json",
                         headers=headers)
-    subs_dict = subs.json()["data"]["subscribers"]
+    try:
+        subs_dict = subs.json()["data"]["subscribers"]
+    except:
+        return(0)
     return(subs_dict)
