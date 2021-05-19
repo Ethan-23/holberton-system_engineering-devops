@@ -3,23 +3,19 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], after="NULL"):
     url = "https://www.reddit.com/"
-    headers = requests.utils.default_headers()
-    headers.update(
-        {
-            'User-Agent': 'My User Agent 1.0',
-        }
-    )
     subs = requests.get(url + "r/" + subreddit + "/hot.json",
-                        headers=headers)
+                        headers={'User-Agent': ''}, params={'after': after})
+    if subs.status_code != 200:
+        return None
+
     subs_dict = subs.json()
-    i = len(hot_list) + 1
-    try:
-        hot_list.append(subs_dict["data"]["children"][i]["data"]["title"])
-    except:
-        if len(hot_list) > 0:
-            return hot_list
-        else:
-            return None
-    return(recurse(subreddit, hot_list))
+
+    for i in subs_dict["data"]["children"]:
+        hot_list.append(i["data"]["title"])
+
+    after = subs_dict["data"]["after"]
+    if after not in [None, 'None', 'Null']:
+        return recurse(subreddit, hot_list, after)
+    return hot_list
